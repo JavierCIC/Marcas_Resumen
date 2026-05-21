@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JS - Mi Examen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Mi Repaso de JavaScript</h1>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <aside>
+            <div class="sidebar">
+                <h3>TEMARIO</h3>
+                <ul id="sidebar-menu"></ul>
+            </div>
+        </aside>
+
+        <main>
+
+
+            <!-- 1 VARIABLES -->
+            <section id="variables" class="section">
+                <h2><span class="numero">1</span> Variables y Tipos</h2>
+                <div class="card">
+                    <p> Las variables son como cajas donde guardamos información.
+                        Usamos <code>let</code> cuando el valor puede cambiar, <code>const</code> cuando no va a cambiar
+                        nunca,
+                        y <code>var</code> (mejor evitarla). Los tipos más comunes son texto (string), números,
+                        verdadero/falso (boolean) y objetos.</p>
+                    <pre class="code-box"><code>let nombre = "Laura";
+const EDAD = 20;
+let esAlumno = true;
+
+console.log(typeof nombre); // "string"</code></pre>
+                    <p class="explicacion"><strong>Explicación del ejemplo:</strong> Aquí declaramos tres variables de
+                        forma diferente.
+                        <code>let</code> se puede cambiar después, <code>const</code> no se puede modificar, y mostramos
+                        el tipo de dato con <code>typeof</code>.
+                    </p>
+                </div>
+
+                <!-- 2 OPERADORSE-->
+                <section id="operadores" class="section">
+                    <h2><span class="numero">2</span> Operadores</h2>
+                    <div class="card">
+                        <p>Los operadores nos permiten hacer operaciones con los datos.
+                            Tenemos operadores matemáticos (+, -, *, /, %), de comparación (>, <,===) y lógicos (&&, ||)
+                                que nos ayudan a tomar decisiones.</p>
+                                <pre class="code-box"><code>let a = 15;
+let b = 4;
+console.log(a + b);     // 19
+console.log(a > b);     // true
+console.log(a % b);     // 3</code></pre>
+                                <p class="explicacion"><strong>Explicación del ejemplo:</strong> Usamos operadores
+                                    matemáticos (+ y %) y de comparación (>).
+                                    El resultado de cada operación se muestra en la consola.</p>
+                    </div>
+                </section>
+
+                <!-- 3 CONDICIONALES -->
+                <section id="condicionales" class="section">
+                    <h2><span class="numero">3</span> Condicionales</h2>
+                    <div class="card">
+                        <p>Los condicionales nos permiten ejecutar código solo cuando se cumple una condición.
+                            Es como decir "si pasa esto, haz esto otro". Se usan mucho con <code>if</code>,
+                            <code>else if</code> y <code>else</code>.</p>
+                        <pre class="code-box"><code>let nota = 7;
+if (nota >= 9) {
+    console.log("Sobresaliente");
+} else if (nota >= 5) {
+    console.log("Aprobado");
+} else {
+    console.log("Suspenso");
+}</code></pre>
+
+                        <div class="interactivo">
+                            <p>Prueba tu nota:</p>
+                            <input id="nota-input" type="number" value="0" placeholder="Nota">
+                            <button onclick="evaluarNota()">Evaluar Nota</button>
+                            <p id="resultado-nota" class="resultado"></p>
+                        </div>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Según el valor de la variable
+                            <code>nota</code>, el programa decide qué mensaje mostrar.
+                            Es la base de la lógica en programación.</p>
+                    </div>
+                </section>
+
+                <!-- 4 BUCLES -->
+                <section id="bucles" class="section">
+                    <h2><span class="numero">4</span> Bucles</h2>
+                    <div class="card">
+                        <p>Los bucles sirven para repetir código varias veces sin tener que escribirlo manualmente.
+                            El más usado es el <code>for</code>, pero también están <code>while</code> y
+                            <code>for...of</code> para recorrer arrays, que son los próximos.</p>
+                        <pre class="code-box"><code>for(let i = 0; i < 5; i++) {
+    console.log("Número:", i);
+}</code></pre>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Este bucle <code>for</code>
+                            repite el código 5 veces, mostrando los números del 0 al 4.
+                            Muy útil para repetir tareas.</p>
+                    </div>
+                </section>
+
+                <!-- 5 ARRAYS -->
+                <section id="arrays" class="section">
+                    <h2><span class="numero">5</span> Arrays</h2>
+                    <div class="card">
+                        <p>Un array es una lista de elementos. Puedes guardar varios valores en una sola variable.
+                            Tiene métodos útiles como <code>push()</code> para añadir, <code>pop()</code> para quitar, y
+                            <code>map()</code>, <code>filter()</code> para trabajar con ellos.</p>
+                        <pre class="code-box"><code>let frutas = ["manzana", "plátano"];
+frutas.push("naranja");
+console.log(frutas.length);
+console.log(frutas[0]);</code></pre>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Creamos una lista de frutas,
+                            añadimos una nueva con <code>push()</code> y mostramos cuántas hay y la primera fruta.</p>
+                    </div>
+                </section>
+
+                <!-- 6 FUNCIONES -->
+                <section id="funciones" class="section">
+                    <h2><span class="numero">6</span> Funciones</h2>
+                    <div class="card">
+                        <p>Las funciones son bloques de código que podemos reutilizar.
+                            Sirven para organizar mejor el programa y evitar repetir código. Pueden recibir datos
+                            (parámetros) y devolver un resultado.</p>
+                        <pre class="code-box"><code>function sumar(a, b) {
+    return a + b;
+}
+
+const multiplicar = (a, b) => a * b;</code></pre>
+
+                        <div class="interactivo">
+                            <input id="num1" type="number" value="0">
+                            <input id="num2" type="number" value="0">
+                            <button onclick="calcularSuma()">Sumar</button>
+                            <p id="resultado-suma" class="resultado"></p>
+                        </div>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Creamos dos funciones para
+                            sumar y multiplicar.
+                            La arrow function (`=>`) es una forma más moderna y corta de escribir funciones.</p>
+                    </div>
+                </section>
+
+                <!-- 7 DOM -->
+                <section id="dom" class="section">
+                    <h2><span class="numero">7</span> DOM</h2>
+                    <div class="card">
+                        <p>El DOM es la forma en que JavaScript puede acceder y modificar la página web.
+                            Con él podemos cambiar textos, colores, añadir o quitar elementos, todo desde nuestro
+                            código.</p>
+                        <pre class="code-box"><code>document.getElementById("titulo").innerText = "Nuevo texto";
+document.querySelector(".parrafo").style.color = "yellow";</code></pre>
+                        <button onclick="cambiarColorTarjeta(this)">Cambiar color de esta tarjeta</button>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Estas líneas cambian el texto y
+                            el color de elementos de la página web usando JavaScript.</p>
+                    </div>
+                </section>
+
+                <!-- 8 EVENTOS -->
+                <section id="eventos" class="section">
+                    <h2><span class="numero">8</span> Eventos</h2>
+                    <div class="card">
+                        <p>Los eventos son cosas que pasan en la página (hacer click, pulsar una tecla, mover el
+                            ratón...).
+                            Con <code>addEventListener</code> podemos hacer que nuestro código reaccione cuando ocurra
+                            algo.</p>
+                        <pre class="code-box"><code>boton.addEventListener("click", () => {
+    console.log("Botón pulsado");
+});</code></pre>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Con
+                            <code>addEventListener</code> podemos hacer que el código reaccione cuando el usuario haga
+                            click en un botón.</p>
+                    </div>
+                </section>
+
+                <!-- 9 MATH -->
+                <section id="math" class="section">
+                    <h2><span class="numero">9</span> Objeto Math</h2>
+                    <div class="card">
+                        <p>El objeto Math nos da funciones matemáticas útiles como redondear números,
+                            generar números aleatorios, sacar raíces cuadradas, etc. Es muy útil para hacer cálculos.
+                        </p>
+                        <button onclick="generarAleatorio()">Generar número aleatorio</button>
+                        <p id="num-aleatorio" class="resultado grande"></p>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Usamos
+                            <code>Math.random()</code> y <code>Math.floor()</code> para generar un número aleatorio
+                            entre 1 y 100.</p>
+                    </div>
+                </section>
+
+                <!-- 10 STRINGS -->
+                <section id="strings" class="section">
+                    <h2><span class="numero">10</span> Strings</h2>
+                    <div class="card">
+                        <p>Los strings son textos. JavaScript tiene muchas funciones útiles para trabajar con ellos:
+                            pasarlos a mayúsculas, minúsculas, saber su longitud, unirlos, etc.</p>
+                        <pre class="code-box"><code>let texto = "Hola mundo";
+console.log(texto.toUpperCase());
+console.log(`Me llamo ${nombre}`);</code></pre>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Convertimos el texto a
+                            mayúsculas y usamos template literals (las comillas invertidas ``) para combinar texto con
+                            variables.</p>
+                    </div>
+                </section>
+
+                <!-- 11 FECHAS -->
+                <section id="fechas" class="section">
+                    <h2><span class="numero">11</span> Fechas (Date)</h2>
+                    <div class="card">
+                        <p>El objeto Date nos permite trabajar con fechas y horas.
+                            Podemos crear una fecha, obtener el día, mes, año, y mostrarla de diferentes formas.</p>
+                        <pre class="code-box"><code>let hoy = new Date();
+console.log(hoy.getFullYear());
+console.log(hoy.toLocaleDateString());</code></pre>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Creamos un objeto fecha con la
+                            fecha actual y mostramos el año y la fecha completa en formato local.</p>
+                    </div>
+                </section>
+
+                <!-- 12 FORMULARIOS -->
+                <section id="formularios" class="section">
+                    <h2><span class="numero">12</span> Formularios</h2>
+                    <div class="card">
+                        <p>Los formularios nos permiten recoger información del usuario.
+                            Con JavaScript podemos leer lo que escribe, validarlo y decidir qué hacer con esa
+                            información.</p>
+                        <form onsubmit="validarFormulario(event)">
+                            <input id="form-nombre" type="text" placeholder="Tu nombre">
+                            <button type="submit">Enviar Formulario</button>
+                        </form>
+                        <p class="explicacion"><strong>Explicación del ejemplo:</strong> Al enviar el formulario,
+                            JavaScript lee el nombre escrito y puede validarlo antes de enviarlo.</p>
+                    </div>
+                </section>
+
+                <!-- 13 ERRORES -->
+                <section id="errores" class="section">
+                    <h2><span class="numero">13</span> Errores típicos</h2>
+                    <div class="card">
+                        <p>Estos son los errores más comunes que cometemos:</p>
+                        <pre class="code-box"><code><ul>
+                            <li>Olvidar poner punto y coma (;)</li>
+                            <li>Usar <code>==</code> en vez de <code>===</code></li>
+                            <li>Olvidar escribir <code>return</code> en una función</li>
+                            <li>Usar una variable sin declararla antes</li>
+                        </ul></code></pre>
+                    </div>
+                </section>
+
+                <div class="consejos">
+    <h2>Consejos para el examen (Automotivación)</h2>
+    <ul>
+        <li>Practica escribiendo código a mano, sin copiar y pegar.</li>
+        <li>Entiende primero el "porqué" de las cosas antes de memorizar.</li>
+        <li>Revisa siempre la consola del navegador (F12) cuando algo no funcione.</li>
+        <li>Recuerda la diferencia entre <code>let</code>, <code>const</code> y <code>var</code>.</li>
+        <li>Usa <code>===</code> en vez de <code>==</code> para comparar.</li>
+        <li>Organiza tu código con funciones, te ayudará a no repetir código.</li>
+        <li>Si te atascas, respira, lee el enunciado otra vez y divide el problema en partes pequeñas.</li>
+        <li>Repasa los métodos más usados de arrays (push, pop, map, filter) y strings (toUpperCase, length...).</li>
+    </ul>
+    <p><strong>Último consejo:</strong> Confía en ti. Has estado practicando y sabes más de lo que crees. ¡Mucho ánimo!</p>
+        
+    <p>
+        <li>Nota: Son las cosas que me digo antes de examinar jaja</li>
+        <li>Nota: Son las cosas que me digo antes de examinar jaja</li>
+    </p>
+                </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

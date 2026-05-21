@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #18181b;
+    color: #f1f1f1;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ==================== HEADER ==================== */
+header {
+    background-color: #27272a;
+    border-bottom: 2px solid #3f3f46;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin-left: 1.8rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #fcd34d;
+}
+
+/* ==================== SIDEBAR MEJORADO ==================== */
+.sidebar {
+    background-color: #27272a;
+    padding: 2rem 1.6rem;
+    border-radius: 20px;
+    border: 1px solid #52525b;
+    position: sticky;
+    top: 100px;
+    width: 280px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h3 {
+    color: #fcd34d;
+    font-size: 1.35rem;
+    margin-bottom: 1.4rem;
+    text-align: center;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #3f3f46;
+    padding-bottom: 0.8rem;
+}
+
+#sidebar-menu {
+    list-style: none;
+}
+
+#sidebar-menu a {
+    display: block;
+    padding: 0.85rem 1.1rem;
+    color: #e5e7eb;
+    text-decoration: none;
+    border-radius: 12px;
+    margin-bottom: 0.4rem;
+    font-size: 1.08rem;
+    transition: all 0.3s ease;
+}
+
+#sidebar-menu a:hover {
+    background-color: #3f3f46;
+    color: white;
+    transform: translateX(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estado activo (sección actual) */
+#sidebar-menu a.active {
+    background-color: #fcd34d;
+    color: #1f252e;
+    font-weight: 600;
+}
+
+/* ==================== MAIN ==================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    gap: 2.5rem;
+}
+
+main {
+    flex: 1;
+    max-width: 850px;
+}
+
+/* Resto de estilos (cards, código, etc.) */
+.section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 110px;
+}
+
+.numero {
+    background-color: #3f3f46;
+    color: #fcd34d;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.card {
+    background-color: #27272a;
+    border: 1px solid #52525b;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.code-box {
+    background: #111113;
+    color: #bef575;
+    padding: 1.4rem;
+    border-radius: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid #3f3f46;
+}
